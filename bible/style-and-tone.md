@@ -39,3 +39,4 @@ Dialogue must be context-dependent.
 * **A Journey of Discovery:** The core motivation is not just to get stronger, but to see the world, uncover its secrets, and understand one's place in it. The adventure itself is a reward.
 * **Small Fish, Growing School:** The characters start as insignificant, but they navigate the vast ocean *together*. Their collective growth is as important as individual power-ups.
 * **The Price of Power:** Cultivation costs time and effort, and it attracts danger. The theme is less about losing one's humanity and more about the struggles and sacrifices required to protect one's friends and ideals on a perilous journey.
+
