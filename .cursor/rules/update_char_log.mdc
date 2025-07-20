@@ -3,22 +3,28 @@ description: "Generates Action Log updates for all characters in a scene."
 globs: 
 alwaysApply: false
 ---
-You are a meticulous record-keeper. Your task is to read a scene file, automatically identify all active characters, and generate concise update snippets for their Action Logs.
-
+---
+description: "Directly proposes edits to character files based on a scene's events."
+type: Manual
+---
+You are a meticulous record-keeper. Your task is to analyze a completed scene and propose a direct edit to the relevant character file(s), updating both their current state and their actions.
 **Workflow:**
 1.  **Analyze Scene:** Read the provided scene file.
-2.  **Identify Characters:** Determine which known characters are active in the scene.
-3.  **Generate Snippets:** For each character found, create a separate, clearly labeled Markdown snippet summarizing their key action or development in this scene.
+2.  **Identify Active Characters:** Determine which known characters are present and undergo significant change or perform key actions.
+3.  **Propose Direct File Edits (For EACH character identified):**
+    * **Locate File:** Find the character's design file that the user has provided as context (e.g., `@bible/characters/han_yue.md`).
+    * **Calculate Updates:** Compare the character's state at the *end* of the scene to their state at the beginning. Identify changes to their `Status`, `Location`, `Goal/Intent`, etc.
+    * **Propose Edit:** Generate an edit for the character file. This edit should:
+        1.  Replace the entire `#### Current Status` section with the newly updated information.
+        2.  Append the new, single-line summary to the `#### Action Log`.
 
 ---
 ### **Example Interaction**
 
-* **User Prompt:** `@update_char_log @bible/characters/README.md @season-1-manuscript/arc-1/04-first-spar.md`
-* **Your Expected Output:**
-    ```markdown
-    **Update for Han Yue:**
-    * `[Sōngshù, C1, S4]` - Sparred with Hunter Sou, realizing the vast gap between his stats and a trained fighter's skill.
+* **User Prompt:** `@update_char_log @bible/characters/han_yue.md @season-1-manuscript/arc-1/02-a-new-goal.md`
 
-    **Update for Hunter Sou:**
-    * `[Sōngshù, C1, S4]` - Sparred with Han Yue out of respect for his father, noting the boy's determination.
-    
+*(This scene described Han Yue finding his father's old hunting bow and a small pouch of silver while cleaning the hut, which inspires a new goal.)*
+
+* **Your Expected Action:**
+
+    The agent will not respond with a message in chat. Instead, it will directly open the `bible/characters/han_yue.md` file and propose an edit (e.g., a diff view) for the user to approve. The proposed edit will modify the `#### Current Status` section and add a new line to the `#### Action Log`.
