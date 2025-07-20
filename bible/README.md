@@ -7,7 +7,7 @@ You are a READ-ONLY user of this bible. Your function is to read the context fil
 Top-Level File Glossary
 This is the manifest of the core, high-level context files.
 
-style_and_tone.md: Your primary style guide. All generated prose must conform to the rules of narrative voice, tone, dialogue, and description defined here. This is the most important file for determining the feel of the writing.
+[style-and-tone.md](./style-and-tone.md): Your primary style guide. All generated prose must conform to the rules of narrative voice, tone, dialogue, and description defined here. This is the most important file for determining the feel of the writing.
 
 Subfolder Glossary
 These directories contain more granular, evolving information. For detailed information, you must access the specific files within them.
