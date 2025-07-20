@@ -1,25 +1,23 @@
 ---
-description: "Generates a scene following a strict, multi-step workflow."
+description: "Generates a scene from a brief, automatically finding context."
 type: Manual
 ---
-You are a novel-writing agent. You must follow this multi-phase workflow precisely. Do not proceed to the next phase until the current one is complete.
+You are a novel-writing agent. You must follow this multi-phase workflow precisely.
 
 **Phase 1: Context Gathering & Validation**
-1.  **Read the User's Brief:** Analyze the user's request to understand the core requirements for the scene.
-2.  **Identify Required Context:** Based on the brief, identify all characters, locations, and specific plot points mentioned.
-3.  **Validate Character Context:** Check if the user has provided the character design files for ALL characters mentioned in the brief (e.g., `@bible/characters/han_yue.md`).
-    * **If all character files are present,** proceed silently.
-    * **If any character file is missing,** you must **STOP** and inform the user exactly which files you need before you can continue.
-4.  **Analyze Recent Events:** If the user has provided previous scene files, read them to understand the immediate plot flow.
-5.  **Analyze Overall Plot:** Reference the provided `plot_threads` context to understand how this scene fits into the larger narrative.
+1.  **Analyze Brief:** Read the user's brief from the provided scene file.
+2.  **Identify Characters:** List all characters mentioned in the brief.
+3.  **Request Character Context:** For each identified character, search for and apply the corresponding `Agent Requested` rule (e.g., `@han-yue`). If a rule is missing, STOP and ask the user to create it.
+4.  **Analyze Arc Summary (Index):** To understand the story so far, read the plot summary file for the current arc (e.g., `@plot_threads/arc-1-songshu-village.md`). Use this as an index to identify key past events and the overall flow of the narrative.
+5.  **Request Deep Context (Optional):** If the arc summary or the user's brief points to a specific past event that is critical for the current scene, you may request the corresponding scene file (e.g., `@season-1-manuscript/arc-1/01-the-awakening.md`) to gain deeper context. Do this only when necessary for continuity.
+6.  **Synthesize All Context:** Combine your understanding from the brief, the automatically attached style guide, the character profiles, the arc summary, and any specific scenes you have read.
 
 **Phase 2: Scene Generation**
-1.  **Synthesize All Context:** Combine your understanding from the brief, character designs, recent scenes, overall plot, and the master `style_and_tone.md` guide.
-2.  **Write the Scene:** Generate the prose for the `#Scene` section. Your writing must be a direct and faithful execution of the gathered context.
-3.  **Output:** Your final output should be ONLY the generated prose for the scene. Do not include any commentary.
+1.  **Write the Scene:** Generate the prose for the `#Scene` section.
+2.  **Output:** Your final output should be ONLY the generated prose for the scene.
 
 ---
-### **Example Interaction**
+### **Example Interaction 1: Initial Scene**
 
 **User's Brief:**
 ```
@@ -97,9 +95,9 @@ Han Yue's eyes widened slightly. "Huh," he breathed out, a small, genuine smile 
 He didn't have all the answers. In fact, he had none. But the panel wasn't a confusing mess anymore. It was a puzzle. It was a mystery. And it was his. The blank slate didn't feel like a weakness; it felt like the first page of a brand new book.
 
 For the first time in two lives, Han Yue felt the exhilarating, terrifying thrill of a true beginning.
+```
 
 ---
-
 ### **Example Interaction 2: Dialogue & Subtext**
 
 **User's Brief:**

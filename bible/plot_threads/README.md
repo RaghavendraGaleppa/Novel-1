@@ -2,25 +2,17 @@
 
 ### **Purpose**
 
-This directory serves as the central repository for tracking all the ongoing and resolved subplots, mysteries, character grudges, and long-term narrative threads within the novel. Its structured nature ensures that no storyline is forgotten and that developments are logged chronologically.
+This directory's purpose is to maintain a high-level, chronological summary of the entire novel, broken down by story arc. Instead of tracking individual threads, each file here will serve as a complete summary of an arc's events, allowing the AI to quickly grasp the story's progression without needing to read every past scene.
 
 ### **Directory Structure**
 
-The directory is organized hierarchically to mirror the story's progression through different arcs.
-
-1.  **Arc Subfolders:**
-    * The `plot_threads` directory contains subfolders, each named after a major story arc (e.g., `arc-1-songshu-village/`).
-    * This structure localizes plot points to the part of the story where they were first introduced.
-
-2.  **Plot Thread Files:**
-    * Inside each arc subfolder, individual `.md` files represent a single, specific plot thread.
-    * The filename of each file is a short, descriptive title of the plot it contains (e.g., `mystery_of_the_whispering_cave.md`).
-    * A plot thread's file is always located in the folder of the arc where it was **first introduced**, even if it continues across multiple future arcs.
+* The directory contains one `.md` file for each major story arc (e.g., `arc-1-songshu-village.md`).
+* Each file is named after the arc it summarizes. There are no subfolders.
 
 ### **File Content Glossary**
 
-Each individual plot thread file contains the following information to provide a complete overview of that specific storyline:
+Each arc summary file consists of a simple, chronological bulleted list.
 
-* **Summary:** A brief description of the plot thread, its key elements, and its central question.
-* **Status:** The current state of the plot thread (e.g., Active, Dormant, Resolved).
-* **Sightings & Clue Log:** A chronological log detailing every scene and event where this plot thread has appeared or developed, ensuring a clear history from its introduction to its conclusion.
+* Every significant scene in the arc is represented by a single, concise bullet point.
+* Each bullet point is prefixed with its chapter and scene number for easy reference (e.g., `[C1, S1]`).
+* This creates a readable, scannable summary of all key events that have occurred in the story so far.
