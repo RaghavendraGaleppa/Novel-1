@@ -45,3 +45,5 @@ Before leaving the village to begin his journey, he pays his respects at the gra
 
 #### **Action Log**
 *(This log will be populated with significant events as they occur.)*
+
+* `[Sōngshù, A1, S1]` - First encountered his system panel while sitting at his hut, discovered Knowledge Points (KP) as a currency for information, and began to view the system as a tool for understanding his new world.
